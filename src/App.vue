@@ -1,23 +1,37 @@
 <template>
   <h1>Hello test Vue 3</h1>
-  <BaseInput v-model:modelValue="myInput" />
-  <h2>{{ myInput }}</h2>
+  <BaseInput v-model:modelValue="form.myInput" />
+  <SalutationName
+    v-model:salutation="form.salutation"
+    v-model:name="form.name"
+  />
+  <h2>{{ form.myInput }}</h2>
+  <h2>Hello {{ form.salutation }} {{ form.name }}</h2>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, reactive } from 'vue'
 import BaseInput from './components/BaseInput.vue'
+import SalutationName from './components/SalutationName.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     BaseInput,
+    SalutationName,
   },
-  data() {
-    return {
+  setup() {
+    const form = reactive({
       myInput: '',
+      salutation: '',
+      name: '',
+    })
+
+    return {
+      form,
     }
   },
+
 })
 </script>
 

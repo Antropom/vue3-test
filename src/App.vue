@@ -1,18 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <h1>Hello test Vue 3</h1>
+  <BaseInput v-model:modelValue="myInput" />
+  <h2>{{ myInput }}</h2>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent } from 'vue'
+import BaseInput from './components/BaseInput.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld,
+    BaseInput,
   },
-});
+  data() {
+    return {
+      myInput: '',
+    }
+  },
+})
 </script>
 
 <style>

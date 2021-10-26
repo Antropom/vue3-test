@@ -1,12 +1,14 @@
 <template>
-  <h1>Hello test Vue 3</h1>
-  <BaseInput v-model:modelValue="form.myInput" />
-  <SalutationName
-    v-model:salutation="form.salutation"
-    v-model:name="form.name"
-  />
-  <h2>{{ form.myInput }}</h2>
-  <h2>Hello {{ form.salutation }} {{ form.name }}</h2>
+  <div id="app">
+    <h1>Hello test Vue 3</h1>
+    <BaseInput v-model:modelValue="form.myInput" />
+    <SalutationName
+      v-model:salutation.capitalize="form.salutation"
+      v-model:name.capitalize="form.name"
+    />
+    <h2>{{ form.myInput }}</h2>
+    <h2>Hello {{ form.salutation }} {{ form.name }}</h2>
+  </div>
 </template>
 
 <script lang="ts">
@@ -31,7 +33,6 @@ export default defineComponent({
       form,
     }
   },
-
 })
 </script>
 

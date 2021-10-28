@@ -1,7 +1,13 @@
 <template>
   <div id="app">
     <h1>Hello test Vue 3</h1>
-    <BaseInput v-model:modelValue="form.myInput" />
+    <BaseInput
+      v-model:modelValue="form.myInput"
+      @blur="form.myInput = 'blur@its.cold'"
+      label="E-mail:"
+      type="email"
+      class="thicc"
+    />
     <SalutationName
       v-model:salutation.capitalize="form.salutation"
       v-model:name.capitalize="form.name"

@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 const salutations = ['Ms.', 'Mrs.', 'Miss', 'Mx.', 'Dr.']
 
 export default {
